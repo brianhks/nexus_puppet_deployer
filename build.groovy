@@ -124,7 +124,7 @@ modules.each()
 				.addDepend(buildDirRule)
 				.addDepend(pomRule)
 				.publishMavenMetadata("maven-metadata-${it}.xml")
-				.setOverwrite(true)
+				.setOverwrite(false)
 
 		//Add Pom file to artifacts
 		publishRule.addArtifact(pomRule.getTarget())
