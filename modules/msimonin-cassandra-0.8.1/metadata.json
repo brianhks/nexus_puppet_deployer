@@ -1,0 +1,57 @@
+{
+  "name": "msimonin-cassandra",
+  "version": "0.8.1",
+  "source": "https://github.com/msimonin/puppet-cassandra",
+  "author": "Jochen Schalanda, Matthieu Simonin",
+  "license": "Apache 2.0",
+  "summary": "Puppet module to install Apache Cassandra from the DataStax distribution. Forked from gini/cassandra",
+  "description": "A Puppet module to install the DataStax Community edition using the official repositories. Forked from gini/cassandra.",
+  "project_page": "https://github.com/msimonin/puppet-cassandra",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.0.0"
+    },
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": "1.x"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "Changelog.md": "076d0aa8a215c9a047a365a5a277099d",
+    "Gemfile": "a3edfb25825bbbdbe0a56c5a12a08bf6",
+    "LICENSE-2.0.txt": "3b83ef96387f14655fc854ddc3c6bd57",
+    "Modulefile": "8a6d097908994e25be3d929ba1fbfa9f",
+    "README.md": "63db91ea1d896c4b87589181264fbffd",
+    "Rakefile": "d0a7bcdb74658217895c7f13d3f4b1de",
+    "manifests/config.pp": "fb36b2c87518450d4f9a5fdda54de288",
+    "manifests/init.pp": "a3abe3f37140d8f3cf5b04aea3da4522",
+    "manifests/install.pp": "936bfb2fcce8d93ed8bbb7bb68004732",
+    "manifests/params.pp": "4f54cba5978a2dddff0a78ea6c96ffb0",
+    "manifests/repo/debian.pp": "c166b69f345d0499c77059334955461c",
+    "manifests/repo/redhat.pp": "9dbb641cc76955e9a155066c42105bc1",
+    "manifests/repo.pp": "3061e21421e80c232d8b44546bb89f8c",
+    "manifests/service.pp": "048e10043aa2ce5ae621d268f6674340",
+    "spec/classes/cassandra_config_spec.rb": "49e13cc333d6b7960a4da273ba3429ab",
+    "spec/classes/cassandra_repo_spec.rb": "f39baef741613b5da0f5a2ebc618480a",
+    "spec/classes/cassandra_spec.rb": "b9c6f6d2eabe1b936b8beb5838331837",
+    "spec/spec_helper.rb": "31443cbb31de764aac79186cbc17689f",
+    "templates/cassandra-env1.sh.erb": "7a1e48f5d8d5f84286d1659fb8c59bda",
+    "templates/cassandra-env2.0.sh.erb": "3d40b499f94379302c28e1f76a10a871",
+    "templates/cassandra-env2.1.sh.erb": "500b2431f6029e1625975f0a73bc73e7",
+    "templates/cassandra-env4.6.sh.erb": "3d40b499f94379302c28e1f76a10a871",
+    "templates/cassandra1.yaml.erb": "02443d856598786a8d7a297fc5983870",
+    "templates/cassandra2.0.yaml.erb": "4428f772c8ab5b52a0f577e0b93133c7",
+    "templates/cassandra2.1.yaml.erb": "e59eebd55631bd43d60bbc4d67c14da3",
+    "templates/cassandra4.6.yaml.erb": "a2f72636b96c25cf46d6649befc40d18",
+    "tests/05_up.sh": "452a29fa565eb2421d3578c41dac2518",
+    "tests/10_install_apt_module.sh": "86ccd451d2e752a6fe2501fe9871780c",
+    "tests/20_deploy_cassandra.sh": "678295e9da574b37556dbd15e3f4d178",
+    "tests/Vagrantfile": "b23c05f1a7c150bbf4eeca1e1534c4f2",
+    "tests/init.pp": "04b020e5355f0a137fef76b6aaa8935b",
+    "tests/site.pp": "4d20d15498a70c639d9023cd12bcdb6b"
+  }
+}

@@ -222,7 +222,7 @@ def translateVersion(String version)
 		return rangeVersion.toString()
 	}
 
-	""
+	return version.replace('x', '+')
 }
 
 filterLocalModules = true
