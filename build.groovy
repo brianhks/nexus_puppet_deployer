@@ -60,6 +60,9 @@ modules.each()
 
 		def ivyFileName = buildDir+"/ivy-${it}.xml"
 		def ivyFile = new File(ivyFileName)
+		
+		def pomFileName = buildDir+"/pom-${it}.xml"
+		def pomFile = new File(pomFileName)
 
 		def ivyRule = new SimpleRule()
 				.addDepend(buildDirRule)
@@ -83,6 +86,14 @@ modules.each()
 		retrieveRule.setResolveRule(resolveRule)
 
 		retrieveRules.add(retrieveRule)
+		
+		//Setup rule for pom file
+		def pomRule = new PomRule(ivyFile, pomFile, resolveRule, null)
+				.setName(null)
+				.setPomArtifactId(moduleName)
+				.setPomGroupId(packageName)
+				.setPomVersion(metadata.version)
+				.setPomPackaging("tar.gz")
 
 
 		//Setup bundle rule for module
@@ -111,10 +122,14 @@ modules.each()
 				.setGroupId(packageName)
 				.setVersion(metadata.version)
 				.addDepend(buildDirRule)
+				.addDepend(pomRule)
 				.publishMavenMetadata("maven-metadata-${it}.xml")
 				.setOverwrite(true)
 
 		//Add Pom file to artifacts
+		publishRule.addArtifact(pomRule.getTarget())
+				.setType("pom")
+				.setExt("pom")
 		publishRule.addArtifact(ivyRule.getTarget())
 				.setType("ivy")
 				.setExt("xml")
