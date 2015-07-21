@@ -30,7 +30,7 @@ projectVersion = saw.getProperty("project_version")
 
 ivySettings = [new File("ivysettings.xml")]
 if (saw.getProperty("ivysettings") != null)
-	ivySettings.add(saw.getProperty("ivysettings"))
+	ivySettings.add(new File(saw.getProperty("ivysettings")))
 
 buildDirRule = new DirectoryRule(buildDir)
 libDirRule = new DirectoryRule(libDir)
